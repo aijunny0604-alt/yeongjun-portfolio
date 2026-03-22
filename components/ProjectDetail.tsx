@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, ArrowUpRight, Film, Image as ImageIcon, Maximize2 } from 'lucide-react';
+import { X, ArrowLeft, ArrowUpRight, Film, Image as ImageIcon, Maximize2 } from 'lucide-react';
 import { Project } from '../types';
 import Lightbox from './Lightbox';
 
@@ -67,6 +67,15 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onClose }) => {
       className="fixed inset-0 z-[60] bg-cream overflow-y-auto overscroll-contain"
       data-lenis-prevent
     >
+      {/* Back Button */}
+      <button
+        onClick={onClose}
+        className="fixed top-6 left-6 z-50 flex items-center gap-2 px-4 py-2 bg-neutral-900 text-white rounded-full hover:bg-neutral-700 transition-colors"
+      >
+        <ArrowLeft className="w-5 h-5" />
+        <span className="text-sm font-medium hidden md:inline">돌아가기</span>
+      </button>
+
       {/* Close Button */}
       <button
         onClick={onClose}

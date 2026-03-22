@@ -13,7 +13,7 @@ import Lightbox from './components/Lightbox';
 import CustomCursor from './components/CustomCursor';
 import LoadingScreen from './components/LoadingScreen';
 import MagneticButton from './components/MagneticButton';
-import { ArrowDown, Settings, Trophy, Play, Grid } from 'lucide-react';
+import { ArrowDown, Settings, Trophy, Play, Grid, Instagram, Youtube, Camera, Mail } from 'lucide-react';
 
 // YouTube URL에서 비디오 ID 추출
 const getYouTubeVideoId = (url: string): string | null => {
@@ -424,16 +424,31 @@ const App: React.FC = () => {
                 {ABOUT_TEXT}
               </p>
               
-              <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-                {SOCIAL_LINKS.map((link) => (
-                  <a 
-                    key={link.name} 
-                    href={link.url}
-                    className="text-sm font-medium uppercase tracking-wide hover:underline underline-offset-4 decoration-neutral-400 cursor-pointer"
-                  >
-                    {link.name}
-                  </a>
-                ))}
+              <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+                {SOCIAL_LINKS.map((link) => {
+                  const iconMap: Record<string, React.ReactNode> = {
+                    instagram: <Instagram className="w-6 h-6" />,
+                    youtube: <Youtube className="w-6 h-6" />,
+                    flickr: <Camera className="w-6 h-6" />,
+                    mail: <Mail className="w-6 h-6" />,
+                  };
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target={link.url.startsWith('mailto:') ? undefined : '_blank'}
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-3 px-5 py-4 border border-neutral-200 rounded-xl hover:bg-neutral-900 hover:text-white hover:border-neutral-900 transition-all duration-300 cursor-pointer"
+                    >
+                      <span className="text-neutral-400 group-hover:text-white transition-colors">
+                        {iconMap[link.icon] || null}
+                      </span>
+                      <span className="text-sm font-medium uppercase tracking-wide">
+                        {link.name}
+                      </span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>

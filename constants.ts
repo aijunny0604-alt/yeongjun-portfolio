@@ -125,8 +125,8 @@ export const ABOUT_TEXT = `
 `;
 
 export const SOCIAL_LINKS = [
-  { name: 'Instagram', url: '#' },
-  { name: 'YouTube', url: '#' },
-  { name: 'Flickr', url: '#' },
-  { name: 'Contact', url: '#' },
+  { name: 'Instagram', url: 'https://www.instagram.com/d_concepts2/', icon: 'instagram' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@dconcepts7777', icon: 'youtube' },
+  { name: 'Flickr', url: 'https://www.flickr.com/photos/200364842@N07/', icon: 'flickr' },
+  { name: 'Contact', url: 'mailto:lyjcg0604@naver.com', icon: 'mail' },
 ];
