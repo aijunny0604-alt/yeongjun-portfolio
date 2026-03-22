@@ -482,8 +482,8 @@ const App: React.FC = () => {
                Let's Talk
              </h2>
              <div className="md:flex justify-between items-end">
-               <a href="mailto:hello@portfolio.dev" className="text-2xl md:text-4xl hover:text-neutral-400 transition-colors border-b border-white/30 pb-2 cursor-pointer">
-                 hello@portfolio.dev
+               <a href="mailto:lyjcg0604@naver.com" className="text-2xl md:text-4xl hover:text-neutral-400 transition-colors border-b border-white/30 pb-2 cursor-pointer">
+                 lyjcg0604@naver.com
                </a>
                <div className="mt-10 md:mt-0 flex flex-col items-end">
                  <button
