@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
-import { PROJECTS as INITIAL_PROJECTS, ABOUT_TEXT, SOCIAL_LINKS, AWARDS as INITIAL_AWARDS, PLAYGROUND_ITEMS as INITIAL_PLAYGROUND, DESIGN_ITEMS as INITIAL_DESIGN, VIDEO_ITEMS as INITIAL_VIDEOS } from './constants';
+import { PROJECTS as INITIAL_PROJECTS, ABOUT_TEXT, SOCIAL_LINKS, AWARDS as INITIAL_AWARDS, PLAYGROUND_ITEMS as INITIAL_PLAYGROUND, DESIGN_ITEMS as INITIAL_DESIGN, VIDEO_ITEMS as INITIAL_VIDEOS, DEV_PROJECTS } from './constants';
 import { Project, Award, PlaygroundItem, DesignItem, VideoItem } from './types';
 import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import ChatWidget from './components/ChatWidget';
 import ProjectDetail from './components/ProjectDetail';
 import DesignSection from './components/DesignSection';
+import DevSection from './components/DevSection';
 import VideoSection from './components/VideoSection';
 import AdminModal from './components/AdminModal';
 import Lightbox from './components/Lightbox';
@@ -79,6 +80,7 @@ const App: React.FC = () => {
       gestureOrientation: 'vertical',
       smoothWheel: true,
       touchMultiplier: 2,
+      prevent: (node: HTMLElement) => node.closest('[data-lenis-prevent]') !== null,
     });
 
     lenisRef.current = lenis;
@@ -432,6 +434,9 @@ const App: React.FC = () => {
 
         {/* Design Portfolio Section */}
         <DesignSection items={designItems} />
+
+        {/* Development Projects Section */}
+        <DevSection items={DEV_PROJECTS} lenisRef={lenisRef} />
 
         {/* About Section */}
         <section id="about" className="relative z-10 px-6 md:px-20 py-32 bg-neutral-100">

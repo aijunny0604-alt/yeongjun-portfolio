@@ -1,4 +1,4 @@
-import { Project, Award, PlaygroundItem, DesignItem, VideoItem } from './types';
+import { Project, Award, PlaygroundItem, DesignItem, VideoItem, DevProject } from './types';
 
 export const HERO_TEXT = {
   line1: "YEONG JUN",
@@ -164,6 +164,55 @@ export const VIDEO_ITEMS: VideoItem[] = [
     title: 'Video Work #8',
     url: 'https://youtu.be/1JiDGFv7uzg',
   },
+];
+
+export const DEV_PROJECTS: DevProject[] = [
+  {
+    id: 'dev-1',
+    title: 'Auto Shop Manager',
+    subtitle: 'BIGS MOTORS 정비소 관리 시스템',
+    description: '실제 자동차 정비소의 예약, 고객, 견적, 재고, 매출을 통합 관리하는 풀스택 시스템. Google Calendar/Sheets 양방향 연동과 37개 API 라우트를 갖춘 프로덕션 레벨 서비스.',
+    image: '/images/dev-projects/auto-shop-dashboard.png',
+    gallery: [
+      '/images/dev-projects/auto-shop-dashboard.png',
+      '/images/dev-projects/auto-shop-reservations.png',
+      '/images/dev-projects/auto-shop-customers.png',
+    ],
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Prisma', 'Tailwind CSS', 'Zustand'],
+    features: ['Google Calendar 양방향 동기화', '37개 REST API', '실시간 재고 알림', '견적서 생성/공유', '매출 분석 대시보드'],
+    githubUrl: 'https://github.com/aijunny0604-alt/auto-shop-manager',
+  },
+  {
+    id: 'dev-2',
+    title: 'POS System',
+    subtitle: 'MOVE MOTORS 실시간 POS 시스템',
+    description: '자동차 튜닝 파츠 판매를 위한 실시간 POS 시스템. AI 자연어 주문 인식, WebSocket 실시간 동기화, 주문 자동 병합 등 12개 페이지로 구성된 업무용 솔루션.',
+    image: '/images/dev-projects/pos-dashboard.png',
+    gallery: [
+      '/images/dev-projects/pos-dashboard.png',
+      '/images/dev-projects/pos-order.png',
+      '/images/dev-projects/pos-orders.png',
+    ],
+    techStack: ['React', 'Vite', 'Supabase', 'Tailwind CSS', 'Google Gemini AI', 'ExcelJS'],
+    features: ['AI 자연어 주문 인식', 'WebSocket 실시간 동기화', 'API 호출 78% 최적화', '배송라벨 Excel 출력', '주문 자동 병합'],
+    githubUrl: 'https://github.com/aijunny0604-alt/pos-calculator-web',
+  },
+  {
+    id: 'dev-3',
+    title: 'Move Automotive',
+    subtitle: 'D1 LIGHTS 드리프트팀 스폰서십 사이트',
+    description: 'D1 LIGHTS 드리프트 대회 참가팀의 스폰서 유치를 위한 프로모션 웹사이트. 3D 별빛 배경, 360도 차량 뷰어, 4개국어 지원으로 몰입감 있는 경험 제공.',
+    image: '/images/dev-projects/move-auto-enter.png',
+    gallery: [
+      '/images/dev-projects/move-auto-enter.png',
+      '/images/dev-projects/move-auto-driver.png',
+      '/images/dev-projects/move-auto-media.png',
+    ],
+    techStack: ['HTML/CSS/JS', 'Lenis', 'GitHub API', 'GitHub Pages'],
+    features: ['360도 인터랙티브 차량 뷰어', '4개국어 동적 전환', '3D 별빛 패럴랙스 효과', 'GitHub API 갤러리 관리', '스폰서 존 매핑'],
+    githubUrl: 'https://github.com/aijunny0604-alt/move-auto',
+    liveUrl: 'https://aijunny0604-alt.github.io/move-auto/',
+  }
 ];
 
 export const ABOUT_TEXT = `

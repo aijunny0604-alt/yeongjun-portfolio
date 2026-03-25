@@ -56,6 +56,19 @@ export interface ChatMessage {
   timestamp: number;
 }
 
+export interface DevProject {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  gallery: string[];
+  techStack: string[];
+  features: string[];
+  githubUrl: string;
+  liveUrl?: string;
+}
+
 export enum NavigationItem {
   WORK = 'Work',
   ABOUT = 'About',

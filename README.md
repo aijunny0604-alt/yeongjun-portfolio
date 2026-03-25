@@ -14,9 +14,10 @@ AI 아티스트 이영준의 포트폴리오 웹사이트
 | [04-video-reel.md](docs/04-video-reel.md) | YouTube 영상 캐러셀 |
 | [05-playground.md](docs/05-playground.md) | Playground 아카이브 |
 | [06-design.md](docs/06-design.md) | 디자인 포트폴리오 |
-| [07-admin-panel.md](docs/07-admin-panel.md) | 관리자 패널 |
-| [08-interactions.md](docs/08-interactions.md) | 인터랙션 & UX |
-| [09-tech-stack.md](docs/09-tech-stack.md) | 기술 스택 & 아키텍처 |
+| [07-dev-works.md](docs/07-dev-works.md) | Dev Works (개발 프로젝트) |
+| [08-admin-panel.md](docs/08-admin-panel.md) | 관리자 패널 |
+| [09-interactions.md](docs/09-interactions.md) | 인터랙션 & UX |
+| [10-tech-stack.md](docs/10-tech-stack.md) | 기술 스택 & 아키텍처 |
 
 ## Features
 
@@ -27,6 +28,7 @@ AI 아티스트 이영준의 포트폴리오 웹사이트
 - **Video Reel** - YouTube 영상 포트폴리오 (가로 스크롤 캐러셀)
 - **Playground** - 실험적 작업물 아카이브
 - **Design** - 포스터, 앨범 커버, 브랜드 아이덴티티
+- **Dev Works** - AI 활용 개발 프로젝트 (정비소 관리, POS 시스템, 스폰서십 사이트)
 - **About** - SNS 링크 (Instagram, YouTube, Flickr)
 
 ### Admin Panel
