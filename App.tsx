@@ -380,7 +380,7 @@ const App: React.FC = () => {
                <div>
                   <h2 className="text-3xl md:text-6xl font-serif text-neutral-900 mb-4">Playground</h2>
                   <p className="text-neutral-500 text-sm md:text-base font-sans max-w-md">
-                    실험적인 작업물, 모션 그래픽 스터디, 그리고 일상의 영감들을 모아둔 아카이브입니다.
+                    장르에 구애받지 않는 실험. 새로운 기법과 시각적 표현을 탐구하는 공간입니다.
                   </p>
                </div>
                <Grid className="w-6 h-6 md:w-8 md:h-8 text-neutral-300" />
@@ -498,7 +498,7 @@ const App: React.FC = () => {
                    맨 위로
                    <ArrowDown className="w-4 h-4 rotate-180 group-hover:-translate-y-1 transition-transform" />
                  </button>
-                 <p className="text-xs text-neutral-600 mt-4">© 2025 All Rights Reserved.</p>
+                 <p className="text-xs text-neutral-600 mt-4">© 2026 YEONGJUN LEE. All Rights Reserved.</p>
                </div>
              </div>
            </div>

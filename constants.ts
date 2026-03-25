@@ -3,7 +3,7 @@ import { Project, Award, PlaygroundItem, DesignItem, VideoItem, DevProject } fro
 export const HERO_TEXT = {
   line1: "YEONG JUN",
   line2: "LEE",
-  sub: "순간을 포착하고, 감동을 편집합니다. 사진과 영상으로 당신의 이야기를 전달하는 크리에이터입니다."
+  sub: "사진 · 영상 · AI · 개발. 미디어와 기술의 경계를 넘나들며 새로운 가치를 만드는 크리에이터입니다."
 };
 
 export const PROJECTS: Project[] = [
@@ -13,7 +13,7 @@ export const PROJECTS: Project[] = [
     category: '포토그래피',
     year: '2024',
     image: '/yeongjun-portfolio/images/53786435527_17433df4d8_b.jpg',
-    description: '속도와 역동성을 담은 자동차 포토그래피. 드리프트의 긴장감과 아드레날린을 한 장의 사진에 담았습니다.',
+    description: '드리프트의 긴장감과 속도를 한 프레임에 포착. 현장의 열기를 전달하는 모터스포츠 포토그래피.',
     tags: ['Automotive', 'Action', 'Drift', 'Sports'],
     gallery: [
       { type: 'image', url: '/yeongjun-portfolio/images/53786435532_71a623a182_b.jpg' },
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     category: '제품 촬영',
     year: '2024',
     image: '/yeongjun-portfolio/images/53928174748_96dd496038_b.jpg',
-    description: '제품의 디테일과 질감을 극대화하는 상업 사진. 자동차 파츠부터 다양한 제품까지, 판매를 이끄는 이미지를 만듭니다.',
+    description: '디테일과 질감을 극대화하는 라이팅 기법으로, 제품의 매력을 최대한 끌어내는 상업 사진.',
     tags: ['Commercial', 'Product', 'Lighting', 'Detail'],
     gallery: [
       { type: 'image', url: '/yeongjun-portfolio/images/53928308389_705ac179e1_b.jpg' },
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     category: '영상 편집',
     year: '2024',
     image: '/yeongjun-portfolio/images/53942097638_989f096918_b.jpg',
-    description: '자동차의 역동적인 움직임부터 웨딩의 감동적인 순간까지. 다양한 장르를 아우르는 시네마틱 영상 편집.',
+    description: '자동차의 역동성부터 웨딩의 감성까지. 컬러 그레이딩과 편집으로 이야기를 완성하는 시네마틱 영상.',
     tags: ['Cinematic', 'Wedding', 'Automotive', 'Color Grading'],
     gallery: [
       { type: 'image', url: '/yeongjun-portfolio/images/53964377422_4c0216b542_b.jpg' },
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     category: 'AI 아트워크',
     year: '2024',
     image: '/yeongjun-portfolio/images/53968820042_ec311e50ec_b.jpg',
-    description: 'AI 기술을 활용한 창의적인 이미지 생성. 상상력의 한계를 넘어서는 새로운 비주얼 아트.',
+    description: 'AI 이미지 생성 기술과 크리에이티브를 결합. 기술로 상상력의 한계를 확장합니다.',
     tags: ['AI Art', 'Generative', 'Creative', 'Digital Art'],
     gallery: [
       { type: 'image', url: '/yeongjun-portfolio/images/53618095933_87aaf22e57_b.jpg' },
@@ -77,7 +77,7 @@ export const AWARDS: Award[] = [
     organization: '매일경제',
     result: '우수상',
     video: 'https://youtu.be/m-AkFwNKQ0g',
-    description: 'AI 기술을 활용하여 제작한 영상 광고로 우수상을 수상했습니다. 창의적인 스토리텔링과 AI 영상 편집 기술의 조화를 높이 평가받았습니다.'
+    description: 'AI 영상 생성 기술과 스토리텔링을 결합한 광고 영상으로 우수상 수상. 미디어 감각과 AI 활용 능력을 동시에 인정받았습니다.'
   }
 ];
 
@@ -216,10 +216,10 @@ export const DEV_PROJECTS: DevProject[] = [
 ];
 
 export const ABOUT_TEXT = `
-  부산에서 태어나 바다의 깊이와 도시의 역동성을 품고 자란 AI 아티스트입니다.
-  전통적인 사진과 영상의 경계를 넘어, 인공지능 기술과 창작 예술을 융합하여
-  새로운 시각적 경험을 만들어갑니다. 기술과 감성의 조화로움 속에서
-  상상을 현실로, 순간을 영원으로 담아내는 크리에이터입니다.
+  사진과 영상으로 순간을 포착하고, AI 기술로 상상을 현실로 만들며,
+  프로그래밍으로 아이디어를 서비스로 구현합니다.
+  미디어 제작부터 AI 활용, 풀스택 개발까지 —
+  다양한 분야의 경험을 융합하여 새로운 가치를 창출하는 크리에이터입니다.
 `;
 
 export const SOCIAL_LINKS = [

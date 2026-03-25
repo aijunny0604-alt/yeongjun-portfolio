@@ -127,26 +127,6 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Animated gradient mesh background */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(245,243,240,0.8) 0%, transparent 70%)',
-        }}
-        animate={{
-          background: [
-            'radial-gradient(ellipse 80% 50% at 40% 40%, rgba(245,243,240,0.8) 0%, transparent 70%)',
-            'radial-gradient(ellipse 80% 50% at 60% 60%, rgba(245,243,240,0.8) 0%, transparent 70%)',
-            'radial-gradient(ellipse 80% 50% at 40% 40%, rgba(245,243,240,0.8) 0%, transparent 70%)',
-          ],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
       {/* Floating particles */}
       {particles.map((particle) => (
         <motion.div

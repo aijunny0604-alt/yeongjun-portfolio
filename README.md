@@ -1,6 +1,6 @@
 # YEONGJUN Portfolio
 
-AI 아티스트 이영준의 포트폴리오 웹사이트
+사진 · 영상 · AI · 개발 — 미디어와 기술을 융합하는 크리에이터 이영준의 포트폴리오
 
 **Live**: https://aijunny0604-alt.github.io/yeongjun-portfolio/
 
@@ -29,7 +29,7 @@ AI 아티스트 이영준의 포트폴리오 웹사이트
 - **Playground** - 실험적 작업물 아카이브
 - **Design** - 포스터, 앨범 커버, 브랜드 아이덴티티
 - **Dev Works** - AI 활용 개발 프로젝트 (정비소 관리, POS 시스템, 스폰서십 사이트)
-- **About** - SNS 링크 (Instagram, YouTube, Flickr)
+- **About** - 크리에이터 소개 & SNS 링크
 
 ### Admin Panel
 채팅 위젯에서 `/영준` 또는 `/관리자` 입력으로 접근
