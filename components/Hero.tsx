@@ -1,8 +1,25 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { HERO_TEXT } from '../constants';
 
+const MASK_IMAGE_URL = 'https://live.staticflickr.com/65535/53616840452_e2aa99ae25_h.jpg';
+
 const Hero: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [maskReady, setMaskReady] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  // 글자 애니메이션 완료 후 마스킹 전환 (2초 후)
+  useEffect(() => {
+    const timer = setTimeout(() => setMaskReady(true), 2500);
+    return () => clearTimeout(timer);
+  }, []);
   const { scrollY } = useScroll();
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -99,10 +116,9 @@ const Hero: React.FC = () => {
             variants={charVariants}
             className="inline-block cursor-default"
             style={{ transformOrigin: 'bottom center' }}
-            whileHover={{
-              scale: 1.12,
-              y: -8,
-              color: '#333',
+            whileHover={maskReady ? undefined : {
+              scale: 1.15,
+              y: -10,
               transition: { type: 'spring', stiffness: 400, damping: 10 }
             }}
           >
@@ -235,11 +251,26 @@ const Hero: React.FC = () => {
         }}
       />
 
-      {/* Main text - Line 1 with staggered reveal */}
+      {/* Main text - Line 1 with staggered reveal + image mask */}
       <div className="relative pb-2">
         <motion.h1
-          style={{ x: x1 }}
-          className="text-[13vw] md:text-[15vw] leading-[1.1] font-serif tracking-[-0.04em] text-neutral-900 whitespace-nowrap relative"
+          style={{
+            x: x1,
+            ...(maskReady ? {
+              backgroundImage: `url("${MASK_IMAGE_URL}")`,
+              backgroundSize: '120% auto',
+              backgroundPosition: 'center 30%',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: isMobile ? 'none' : 'heroKenBurns 20s ease-in-out infinite alternate',
+            } : {}),
+            transition: 'all 1.2s ease-in-out',
+          }}
+          className="text-[13vw] md:text-[15vw] leading-[1.1] font-serif tracking-[-0.04em] whitespace-nowrap relative"
+          data-cursor-hero
+          whileHover={maskReady ? { scale: 1.03, letterSpacing: '-0.02em' } : undefined}
+          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
           {/* Animated underline - 글자 등장 후 나타남 */}
           <motion.span
@@ -253,11 +284,26 @@ const Hero: React.FC = () => {
         </motion.h1>
       </div>
 
-      {/* Main text - Line 2 with offset animation */}
+      {/* Main text - Line 2 with offset animation + image mask */}
       <div className="relative pb-2">
         <motion.h1
-          style={{ x: x2 }}
-          className="text-[13vw] md:text-[15vw] leading-[1.1] font-serif tracking-[-0.04em] text-neutral-900 md:ml-[15vw] whitespace-nowrap relative italic"
+          style={{
+            x: x2,
+            ...(maskReady ? {
+              backgroundImage: `url("${MASK_IMAGE_URL}")`,
+              backgroundSize: '150% auto',
+              backgroundPosition: '60% 50%',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: isMobile ? 'none' : 'heroKenBurns2 25s ease-in-out infinite alternate',
+            } : {}),
+            transition: 'all 1.2s ease-in-out',
+          }}
+          className="text-[13vw] md:text-[15vw] leading-[1.1] font-serif tracking-[-0.04em] md:ml-[15vw] whitespace-nowrap relative italic"
+          data-cursor-hero
+          whileHover={maskReady ? { scale: 1.05, letterSpacing: '0.02em' } : undefined}
+          transition={{ type: 'spring', stiffness: 200, damping: 20 }}
         >
           {/* Gradient shine effect - 반짝이는 효과 */}
           <motion.span

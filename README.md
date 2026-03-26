@@ -22,9 +22,9 @@
 ## Features
 
 ### Sections
-- **Hero** - 인터랙티브 타이포그래피 애니메이션, 마우스 반응형 효과
+- **Hero** - 텍스트 마스킹 (드리프트 사진), Ken Burns 애니메이션, 호버 확대 효과
 - **Selected Works** - 포토그래피, 제품 촬영, 영상 편집, AI 아트워크 프로젝트
-- **Honor** - 매경미디어 AI 영상 광고 공모전 우수상
+- **Honor** - 매경미디어 AI 영상 광고 공모전 우수상 (골드 그라디언트 디자인)
 - **Video Reel** - YouTube 영상 포트폴리오 (가로 스크롤 캐러셀)
 - **Playground** - 실험적 작업물 아카이브
 - **Design** - 포스터, 앨범 커버, 브랜드 아이덴티티
@@ -44,10 +44,12 @@
 
 모든 변경사항은 localStorage에 저장되어 브라우저에서 유지됩니다.
 
-### Interactions
+### Visual Effects
+- **커스텀 커서** - mix-blend-mode 커서, 섹션별 상태 변화 (default/link/project/hero)
+- **텍스트 마스킹** - Hero 타이틀에 사진이 투영되는 background-clip 효과
+- **필름 그레인** - Canvas 기반 실시간 노이즈 오버레이
 - 3D 틸트 효과 (프로젝트 카드)
 - 패럴랙스 스크롤
-- 커스텀 커서
 - Framer Motion 애니메이션
 - Lenis 스무스 스크롤
 - 풀스크린 라이트박스

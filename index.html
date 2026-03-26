@@ -112,6 +112,37 @@
         -ms-user-select: text;
         user-select: text;
       }
+
+      /* Hero text masking - Ken Burns style slow pan */
+      @keyframes heroKenBurns {
+        0% {
+          background-size: 120% auto;
+          background-position: 20% 30%;
+        }
+        50% {
+          background-size: 140% auto;
+          background-position: 80% 50%;
+        }
+        100% {
+          background-size: 125% auto;
+          background-position: 40% 70%;
+        }
+      }
+
+      @keyframes heroKenBurns2 {
+        0% {
+          background-size: 150% auto;
+          background-position: 60% 40%;
+        }
+        50% {
+          background-size: 170% auto;
+          background-position: 30% 60%;
+        }
+        100% {
+          background-size: 155% auto;
+          background-position: 70% 30%;
+        }
+      }
     </style>
   <script type="importmap">
 {

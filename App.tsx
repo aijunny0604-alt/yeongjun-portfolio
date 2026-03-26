@@ -14,6 +14,7 @@ import VideoSection from './components/VideoSection';
 import AdminModal from './components/AdminModal';
 import Lightbox from './components/Lightbox';
 import CustomCursor from './components/CustomCursor';
+import FilmGrain from './components/FilmGrain';
 import LoadingScreen from './components/LoadingScreen';
 import MagneticButton from './components/MagneticButton';
 import { ArrowDown, Settings, Trophy, Play, Grid, Instagram, Youtube, Camera, Mail } from 'lucide-react';
@@ -212,13 +213,8 @@ const App: React.FC = () => {
       <CustomCursor />
 
       <div className="relative min-h-screen bg-neutral-100 selection:bg-neutral-900 selection:text-white">
-      {/* Noise Texture Overlay */}
-      <div
-        className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay"
-        style={{
-           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-        }}
-      />
+      {/* Animated Film Grain Overlay */}
+      <FilmGrain />
 
       {/* Progress Bar */}
       <motion.div
@@ -296,18 +292,49 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* Honors & Awards Section - Exhibition Style */}
-        <section id="awards" className="relative z-10 bg-neutral-900 text-white px-6 md:px-20 py-32 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.2)]">
-           <div className="max-w-full mx-auto">
-             <div className="flex items-end gap-4 mb-24">
-                <Trophy className="w-10 h-10 md:w-14 md:h-14 text-yellow-500 mb-2" />
-                <h2 className="text-5xl md:text-9xl font-serif leading-none">Honor</h2>
-             </div>
+        {/* Honors & Awards Section - Premium Gallery Style */}
+        <section id="awards" className="relative z-10 text-white px-6 md:px-20 py-32 rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.2)] overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%)' }}
+        >
+           {/* Decorative background elements */}
+           <div className="absolute inset-0 pointer-events-none overflow-hidden">
+             <div className="absolute top-20 right-20 w-[500px] h-[500px] rounded-full opacity-[0.06] blur-[120px]"
+               style={{ background: 'radial-gradient(circle, #d4af37, transparent)' }} />
+             <div className="absolute bottom-20 left-10 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-[100px]"
+               style={{ background: 'radial-gradient(circle, #c0a36e, transparent)' }} />
+             {/* Subtle grid pattern */}
+             <div className="absolute inset-0 opacity-[0.03]"
+               style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+           </div>
+
+           <div className="max-w-full mx-auto relative">
+             {/* Header with gold accent line */}
+             <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+               className="flex items-end gap-4 mb-24"
+             >
+                <Trophy className="w-10 h-10 md:w-14 md:h-14 text-amber-400 mb-2" />
+                <div>
+                  <span className="block text-xs font-mono uppercase tracking-[0.3em] text-amber-400/70 mb-2">Achievement</span>
+                  <h2 className="text-5xl md:text-9xl font-serif leading-none">Honor</h2>
+                </div>
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 0.3, ease: [0.87, 0, 0.13, 1] }}
+                  className="flex-1 h-[1px] mb-4 ml-8 origin-left hidden md:block"
+                  style={{ background: 'linear-gradient(90deg, rgba(212,175,55,0.5), transparent)' }}
+                />
+             </motion.div>
 
              {awards.map((award, idx) => (
                <div key={idx} className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch mb-20 last:mb-0">
 
-                 {/* Video Display Column - Larger */}
+                 {/* Video Display Column */}
                  <motion.div
                    initial={{ opacity: 0, y: 50 }}
                    whileInView={{ opacity: 1, y: 0 }}
@@ -315,7 +342,7 @@ const App: React.FC = () => {
                    transition={{ duration: 0.8 }}
                    className="w-full lg:w-[65%]"
                  >
-                    <div className="relative aspect-[16/9] bg-neutral-800 rounded-lg overflow-hidden shadow-2xl group">
+                    <div className="relative aspect-[16/9] bg-neutral-800 rounded-xl overflow-hidden shadow-2xl group ring-1 ring-white/10">
                       {award.video ? (
                          getYouTubeVideoId(award.video) ? (
                            <iframe
@@ -339,14 +366,14 @@ const App: React.FC = () => {
                          <div className="w-full h-full flex items-center justify-center text-neutral-500 border border-neutral-700">No Media</div>
                       )}
 
-                      {/* Floating Badge */}
-                      <div className="absolute top-0 left-0 bg-white text-neutral-900 px-6 py-4">
-                         <span className="font-bold text-base tracking-widest uppercase">{award.result}</span>
+                      {/* Floating Badge - Gold style */}
+                      <div className="absolute top-4 left-4 backdrop-blur-md bg-amber-500/90 text-neutral-900 px-5 py-2.5 rounded-full shadow-lg">
+                         <span className="font-bold text-sm tracking-widest uppercase">{award.result}</span>
                       </div>
                     </div>
                  </motion.div>
 
-                 {/* Text Info Column - Larger Text */}
+                 {/* Text Info Column */}
                  <motion.div
                    initial={{ opacity: 0, x: 50 }}
                    whileInView={{ opacity: 1, x: 0 }}
@@ -355,13 +382,13 @@ const App: React.FC = () => {
                    className="w-full lg:w-[35%] flex flex-col justify-center"
                  >
                     <div className="mb-8">
-                      <span className="inline-block px-4 py-2 border border-white/30 rounded-full text-sm font-mono mb-6 text-neutral-300">
+                      <span className="inline-block px-4 py-2 border border-amber-500/30 rounded-full text-sm font-mono mb-6 text-amber-400/80">
                         {award.year} — {award.organization}
                       </span>
                       <h3 className="text-4xl md:text-6xl font-serif leading-tight mb-8">
                         {award.title}
                       </h3>
-                      <div className="w-16 h-1 bg-yellow-500 mb-8"></div>
+                      <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-amber-300 mb-8 rounded-full"></div>
                       <p className="text-neutral-400 leading-relaxed text-xl keep-all">
                         {award.description}
                       </p>
